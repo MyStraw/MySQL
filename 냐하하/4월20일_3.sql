@@ -32,3 +32,7 @@ from orderitems, products, vendors
 where products.vend_id = vendors.vend_id
 and products.prod_id=orderitems.prod_id
 and order_num=20007;
+
+
+
+
