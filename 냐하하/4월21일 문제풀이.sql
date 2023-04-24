@@ -65,6 +65,41 @@ and spj.jno = j.jno
 and s.city = 'london'
 and j.city = 'london';
 
+
+
+-- 8-1--
+select pname, pno
+from p
+where pno in (
+	select pno
+	from spj
+	where sno in (
+		select sno 
+		from s
+		where city = 'london')
+        and jno in ( select jno
+        from j
+        where city = 'london'));
+        
+        
+    -- 8-1--
+select pname, pno
+from p
+where pno in (
+	select pno
+	from spj
+	where jno in (
+		select jno 
+		from j
+		where city = 'london')
+        and sno in ( select sno
+        from s
+        where city = 'london'));
+        
+      
+
+
+
 -- 9 --
 select j.city, s.city
 from j, s, spj
@@ -81,7 +116,9 @@ and j.city=s.city;
 
 
 -- 11 --
-
+select pname, pno
+from p
+where pno;
 
 
 
