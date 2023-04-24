@@ -96,5 +96,5 @@ where
 -- 13 --
 select count(spj.jno)
 from spj
-where spj.sno = 's1'
+where spj.sno = 's1';
 
