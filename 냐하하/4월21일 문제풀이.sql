@@ -1,4 +1,6 @@
 use warehouse;
+-- 125page
+
 
 -- 1--
 select city, jname
@@ -37,7 +39,7 @@ select sno, pno, jno
 from s,p,j
 where s.city <> j.city and j.city <> p.city and s.city <> p.city;
 
--- 7--
+-- 7-- in 쓰기
 select pname, pno
 from p
 where pno in (
@@ -49,11 +51,25 @@ where pno in (
 		where city = 'london'
 ));
 
--- 7-1 --
+-- 7 -- exists 쓰기
+select pname, pno
+from p
+where exists (select pno from spj where exists (select sno from s where city= 'london' and p.pno = spj.pno
+and spj.sno = s.sno)); -- 굳이??
+
+-- 7-- join 쓰기
+select distinct pname, p.pno
+from p
+join spj
+on p.pno = spj.pno
+join s
+on s.city= 'london' and spj.sno = s.sno;
+
+-- 7 -- and만 쓰기
 select p.pname, p.pno, jno, s.sno
 from p,spj,s
 where p.pno = spj.pno
-and spj.sno = s.sno
+and spj.sno = s.sno 
 and s.city = 'london';
 
 -- 8--
