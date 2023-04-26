@@ -12,4 +12,4 @@ call dynamicSQL('s');
 
 call dynamicSQL1('spj',300);
 
-call dynamicSQL2('s', 10, 30);
+call dynamicSQL2('s', 10, 30); -- select(에러났는지 확인용)와 execute(실제 쿼리문)랑 테이블 2개가 나온다. 테이블탭 잘 봐보셈.

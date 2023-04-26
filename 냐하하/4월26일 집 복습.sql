@@ -92,8 +92,6 @@ where exists (select * from spj where exists (select * from s where exists (sele
 
 
 
-
-
 -- 8-3 join이 오히려 in처럼 덩이 붙이는게 비슷--
 select distinct p.pname, p.pno
 from p
