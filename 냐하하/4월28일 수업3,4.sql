@@ -1,13 +1,13 @@
 -- cross join
 
-select concat( b.v, " x " , a.v  ," = " , b.v*a.v) as 2단, 
-concat(c.v, " x " , a.v  ," = " , b.v*a.v) as 3단,
-concat(d.v, " x " , a.v  ," = " , b.v*a.v) as 4단,
-concat(e.v, " x " , a.v  ," = " , b.v*a.v) as 5단,
-concat(f.v, " x " , a.v  ," = " , b.v*a.v) as 6단,
-concat(g.v, " x " , a.v  ," = " , b.v*a.v) as 7단,
-concat(h.v, " x " , a.v  ," = " , b.v*a.v) as 8단,
-concat(i.v, " x " , a.v  ," = " , b.v*a.v) as 9단
+select concat(b.v, " x " , a.v  ," = " , b.v*a.v) as 2단, 
+concat(c.v, " x " , a.v  ," = " , c.v*a.v) as 3단,
+concat(d.v, " x " , a.v  ," = " , d.v*a.v) as 4단,
+concat(e.v, " x " , a.v  ," = " , e.v*a.v) as 5단,
+concat(f.v, " x " , a.v  ," = " , f.v*a.v) as 6단,
+concat(g.v, " x " , a.v  ," = " , g.v*a.v) as 7단,
+concat(h.v, " x " , a.v  ," = " , h.v*a.v) as 8단,
+concat(i.v, " x " , a.v  ," = " , i.v*a.v) as 9단
 from (
 	select 1 v union
 	select 2 v union
