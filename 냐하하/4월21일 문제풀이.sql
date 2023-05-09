@@ -10,12 +10,12 @@ where city = 'London';
 
 -- 2--
 select sname
-from s, j, spj
+from s, spj
 where s.sno = spj.sno
-and j.jno = spj.jno;
+and jno = 'j1';
 
 -- 3--
-select sno, pno, qty
+select distinct sno, pno, qty
 from spj
 where qty>=300
 and qty<=700;
@@ -33,6 +33,8 @@ from p;
 select sno, pno, jno
 from s,p,j
 where s.city = j.city and j.city = p.city and s.city = p.city;
+
+
 
 -- 6--
 select sno, pno, jno
@@ -73,7 +75,7 @@ and spj.sno = s.sno
 and s.city = 'london';
 
 -- 8--
-select p.pname, p.pno, j.jno, s.sno
+select p.pname, p.pno, j.jno, s.sno 
 from p,spj,s, j
 where p.pno = spj.pno
 and spj.sno = s.sno
